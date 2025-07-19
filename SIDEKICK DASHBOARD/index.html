@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Freelancer Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">&#9776;</button>
+  <aside class="sidebar">
+    <div class="brand">SideKickPro</div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">&#8962; Dashboard</a></li>
+        <li><a href="#">&#128100; Profile</a></li>
+        <li><a href="#">&#128179; Payments</a></li>
+        <li><a href="#">&#9881;&#65039; Setting</a></li>
+        <li><a href="#">&#128221; Testimonials</a></li>
+      </ul>
+    </nav>
+    <div class="logout" style="margin-top:auto;">
+      <a href="#">&#128682; Logout</a>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="dashboard-header">
+      <div class="welcome">Welcome back, <span style="color:var(--primary)">Mr.Snowman</span> 👋</div>
+      <div class="user">
+        <span class="avatar">M</span>
+        <span>
+          <div style="font-size:1rem;font-weight:500;">Mr.Snowman</div>
+          <div style="font-size:0.92rem;color:#64748b;">Freelancer</div>
+        </span>
+      </div>
+    </div>
+
+    <!-- Dashboard cards -->
+    <div class="cards">
+      <div class="card">
+        <div class="label">Earnings (This Month)</div>
+        <div class="value">$0</div>
+        <div class="trend">+12% from last month</div>
+      </div>
+      <div class="card">
+        <div class="label">Active Projects</div>
+        <div class="value">0</div>
+        <div class="trend" style="color:var(--primary);">2 new projects</div>
+      </div>
+      <div class="card">
+        <div class="label">Pending Proposals</div>
+        <div class="value">0</div>
+        <div class="trend" style="color:var(--gray);">Awaiting response</div>
+      </div>
+      <div class="card">
+        <div class="label">Total Clients</div>
+        <div class="value">0</div>
+        <div class="trend" style="color:var(--success);">+1 new client</div>
+      </div>
+    </div>
+
+    <!-- Projects Table and Messages -->
+    <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+      <div style="flex:2;min-width:270px;">
+        <div class="section-title">Recent Projects</div>
+        <table class="projects-table">
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Client</th>
+              <th>Status</th>
+              <th>Due Date</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Website Redesign</td>
+              <td>Acme Inc.</td>
+              <td><span class="status ongoing">Ongoing</span></td>
+              <td>Jul 30, 2025</td>
+              <td>$1200</td>
+            </tr>
+            <tr>
+              <td>Mobile App UI</td>
+              <td>GreenLabs</td>
+              <td><span class="status completed">Completed</span></td>
+              <td>Jul 15, 2025</td>
+              <td>$900</td>
+            </tr>
+            <tr>
+              <td>SEO Audit</td>
+              <td>StartNow</td>
+              <td><span class="status pending">Pending</span></td>
+              <td>Aug 3, 2025</td>
+              <td>$300</td>
+            </tr>
+            <tr>
+              <td>Logo Design</td>
+              <td>BlueSky</td>
+              <td><span class="status ongoing">Ongoing</span></td>
+              <td>Aug 13, 2025</td>
+              <td>$400</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="messages">
+        <div class="section-title">Recent Messages</div>
+        <ul class="messages-list">
+          <li>
+            <div class="from">Jane Doe</div>
+            <div class="message">Can you update the wireframes?</div>
+            <div class="time">3 hours ago</div>
+          </li>
+          <li>
+            <div class="from">BlueSky</div>
+            <div class="message">Logo draft looks great!</div>
+            <div class="time">Yesterday</div>
+          </li>
+          <li>
+            <div class="from">Acme Inc.</div>
+            <div class="message">Let's schedule a call for feedback.</div>
+            <div class="time">2 days ago</div>
+          </li>
+          <li>
+            <div class="from">GreenLabs</div>
+            <div class="message">Payment sent for UI project.</div>
+            <div class="time">3 days ago</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

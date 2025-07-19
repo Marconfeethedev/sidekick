@@ -1,0 +1,278 @@
+:root {
+      --sidebar-width: 230px;
+      --primary: #3b82f6;
+      --background: #f5f7fa;
+      --white: #fff;
+      --gray: #64748b;
+      --light-gray: #e5e7eb;
+      --danger: #ef4444;
+      --success: #22c55e;
+      --radius: 8px;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--background);
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+    }
+    .sidebar {
+      width: var(--sidebar-width);
+      height: 100vh;
+      background: var(--white);
+      box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+    .sidebar .brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--primary);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      border-bottom: 1px solid var(--light-gray);
+      letter-spacing: 1px;
+    }
+    .sidebar nav {
+      margin-top: 2rem;
+      flex: 1;
+    }
+    .sidebar nav ul {
+      list-style: none;
+    }
+    .sidebar nav ul li {
+      margin-bottom: 1.2rem;
+    }
+    .sidebar nav ul li a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--gray);
+      font-size: 1.1rem;
+      padding: 0.75rem 1.7rem;
+      border-radius: var(--radius);
+      transition: background 0.2s, color 0.2s;
+      gap: 0.75em;
+    }
+    .sidebar nav ul li a.active,
+    .sidebar nav ul li a:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .sidebar .logout a {
+      color: var(--danger);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    .main {
+      margin-left: var(--sidebar-width);
+      flex: 1;
+      padding: 2.5rem 2.5rem 2rem 2.5rem;
+      min-height: 100vh;
+      background: var(--background);
+    }
+    .dashboard-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.2rem;
+    }
+    .dashboard-header .welcome {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .dashboard-header .user {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .dashboard-header .avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--light-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    /* Cards Section */
+    .cards {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .card {
+      flex: 1 1 200px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 1.5rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      min-width: 180px;
+      min-height: 110px;
+      justify-content: space-between;
+    }
+    .card .label {
+      font-size: 1rem;
+      color: var(--gray);
+      margin-bottom: 0.6rem;
+    }
+    .card .value {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.7rem;
+    }
+    .card .trend {
+      font-size: 0.92rem;
+      color: var(--success);
+    }
+    /* Projects Table */
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .projects-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      margin-bottom: 2.5rem;
+    }
+    .projects-table th, .projects-table td {
+      padding: 1rem 0.8rem;
+      text-align: left;
+    }
+    .projects-table th {
+      background: var(--background);
+      color: var(--gray);
+      font-weight: 500;
+      border-bottom: 2px solid var(--light-gray);
+    }
+    .projects-table tr:not(:last-child) td {
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .projects-table .status {
+      padding: 0.35rem 0.9rem;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      background: var(--light-gray);
+      color: var(--gray);
+      display: inline-block;
+    }
+    .projects-table .status.completed {
+      background: #dcfce7;
+      color: var(--success);
+    }
+    .projects-table .status.ongoing {
+      background: #fef9c3;
+      color: #ca8a04;
+    }
+    .projects-table .status.pending {
+      background: #fee2e2;
+      color: var(--danger);
+    }
+    /* Recent Messages */
+    .messages {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 1.3rem 1.1rem;
+      max-width: 400px;
+      min-width: 270px;
+    }
+    .messages .section-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
+    }
+    .messages-list {
+      list-style: none;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+    .messages-list li {
+      margin-bottom: 1.25rem;
+    }
+    .messages-list .from {
+      font-weight: 500;
+      color: var(--primary);
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    .messages-list .message {
+      color: var(--gray);
+      font-size: 0.98rem;
+      margin-bottom: 0.1rem;
+    }
+    .messages-list .time {
+      color: #94a3b8;
+      font-size: 0.84rem;
+    }
+    /* Responsive */
+    @media (max-width: 950px) {
+      .cards {
+        flex-direction: column;
+      }
+      .main {
+        padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+      }
+    }
+    @media (max-width: 700px) {
+      .sidebar {
+        position: absolute;
+        left: -230px;
+        transition: left 0.3s;
+      }
+      .sidebar.open {
+        left: 0;
+      }
+      .main {
+        margin-left: 0;
+        padding-top: 4rem;
+      }
+      .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+    .sidebar-toggle {
+      display: none;
+      position: fixed;
+      left: 1rem;
+      top: 1rem;
+      background: var(--primary);
+      border: none;
+      color: var(--white);
+      font-size: 1.7rem;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      z-index: 20;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 700px) {
+      .sidebar-toggle {
+        display: flex;
+      }
+    }
